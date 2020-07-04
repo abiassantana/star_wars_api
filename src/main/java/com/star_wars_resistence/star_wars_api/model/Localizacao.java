@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="TB_LOCALIZACAO")
@@ -13,8 +15,11 @@ public class Localizacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotBlank(message = "Necessario preencher o campo latitude.")
 	private String latitude;
+	@NotBlank(message = "Necessario preencher o campo longitude.")
 	private String longitude;
+	@NotBlank(message = "Necessario preencher o campo galaxia.")
 	private String galaxia;
 	
 	public String getLatitude() {
